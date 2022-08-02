@@ -45,4 +45,11 @@ const StudentsFirstCourse = students.filter(({ course }) => course === 1);
 console.log('StudentsFirstCourse', StudentsFirstCourse);
 const avg = students.reduce((acc, student) => acc + student.avg, 0) / students.length;
 console.log('avg', avg);
+const drinks = [
+    { name: 'lemonade', price: 50 },
+    { name: 'lime', price: 10 },
+    { name: 'water', price: 4 },
+];
+const sortedByPrice = drinks.sort((a, b) => a.price - b.price);
+console.log('sortedByPrice', sortedByPrice);
 //# sourceMappingURL=main.js.map

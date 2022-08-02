@@ -71,3 +71,18 @@ console.log('StudentsFirstCourse', StudentsFirstCourse);
 
 const avg: number = students.reduce((acc, student) => acc + student.avg, 0) / students.length;
 console.log('avg', avg);
+
+// task 1
+
+type Drink = {
+  name: string,
+  price: number
+}
+const drinks: Drink[] = [
+  { name: 'lemonade', price: 50 },
+  { name: 'lime', price: 10 },
+  { name: 'water', price: 4 },
+];
+
+const sortedByPrice: Drink[] = drinks.sort((a, b) => a.price - b.price);
+console.log('sortedByPrice', sortedByPrice);
