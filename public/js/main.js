@@ -17,7 +17,7 @@ var Directions;
     Directions[Directions["Left"] = 2] = "Left";
     Directions[Directions["Right"] = 3] = "Right";
 })(Directions || (Directions = {}));
-const names = ['luigi', 'mario', 'yoshi'];
+const names = ['luigi', 'mario', 'yoshi', 'lara'];
 names.push('lara');
 const ninja = [
     {
@@ -45,6 +45,40 @@ const StudentsFirstCourse = students.filter(({ course }) => course === 1);
 console.log('StudentsFirstCourse', StudentsFirstCourse);
 const avg = students.reduce((acc, student) => acc + student.avg, 0) / students.length;
 console.log('avg', avg);
+const numbers = [1, 2, 3, 5];
+const printStrings = (strings) => {
+    const printString = (str) => console.log(str);
+    strings.forEach(printString);
+};
+const sumNumbers = (nums) => {
+    const numberSumReducer = (sum, num) => sum + num;
+    return nums.reduce(numberSumReducer, 0);
+};
+const createPeopleArray = (p1, p2) => [p1, p2];
+console.group('printStrings');
+printStrings(names);
+console.groupEnd();
+console.group('sumNumbers');
+const result = sumNumbers(numbers);
+console.log({
+    numbers,
+    result,
+});
+console.groupEnd();
+console.group('CreatePeopleArray');
+const couple = createPeopleArray(ninja[0], ninja[1]);
+console.log('couple', couple);
+console.group('1. types for functions and arrays');
+const numbers = [1, -8, -6, 7, 5, 1];
+function addPositiveNumbers(arr) {
+    const positiveNumberReducer = (sum, num) => (num > 0 ? sum + num : sum);
+    return arr.reduce(positiveNumberReducer, 0);
+}
+console.log({
+    numbers,
+    sumOfPositiveNumbers: addPositiveNumbers(numbers),
+});
+console.groupEnd();
 const drinks = [
     { name: 'lemonade', price: 50 },
     { name: 'lime', price: 10 },
